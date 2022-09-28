@@ -1,0 +1,365 @@
+@keyframes 위물줄기왼쪽 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes 위물줄기오른쪽 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes 중간물줄기왼쪽 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes 중간물줄기오른쪽 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes 아래물줄기왼쪽 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes 아래물줄기오른쪽 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes 입 {
+  to {
+    transform: translateY(38px);
+  }
+}
+@keyframes 지느러미왼쪽 {
+  from {
+    transform: rotate(40deg);
+  }
+  to {
+    transform: rotate(70deg);
+  }
+}
+@keyframes 지느러미오른쪽 {
+  from {
+    transform: rotate(-40deg);
+  }
+  to {
+    transform: rotate(-60deg);
+  }
+}
+@keyframes 꼬리왼쪽 {
+  from {
+    transform: rotate(-20deg);
+  }
+  to {
+    transform: rotate(-50deg);
+  }
+}
+@keyframes 꼬리오른쪽 {
+  from {
+    transform: rotate(20deg);
+  }
+  to {
+    transform: rotate(60deg);
+  }
+}
+
+:root {
+  --pri: #3ac3f1;
+  --sec: #35b2dc;
+  --line: #1b1a1a;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: beige;
+  background-image: url("images/bg-sea.jpg");
+  background-size: cover;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.whale * {
+  border: 5px solid var(--line);
+}
+.whale {
+  position: relative;
+  top: 80px;
+  margin: 50px auto;
+  width: 600px;
+  height: 500px;
+}
+
+.whale .waterspout {
+  width: 100px;
+  height: 130px;
+  position: relative;
+  top: 60px;
+  left: 180px;
+  border: none;
+}
+.waterspout * {
+  border-width: 2px;
+  background-color: var(--sec);
+  border: 3px solid #0059de;
+}
+
+.waterspout .left {
+  transform-origin: right bottom;
+}
+.waterspout .right {
+  transform-origin: left bottom;
+}
+.waterspout .watertop {
+  position: absolute;
+  width: 24px;
+  height: 12px;
+  bottom: 60px;
+}
+
+.waterspout .watertop.left {
+  left: 20px;
+  border-radius: 50% 100% 0% 100%;
+  transform: rotate(20deg);
+  animation: 위물줄기왼쪽 3s 2s infinite alternate;
+}
+
+.waterspout .watertop.right {
+  bottom: 63px;
+  right: 20px;
+  border-radius: 100% 50% 100% 0%;
+  transform: rotate(-20deg);
+  animation: 위물줄기오른쪽 3s 2.5s infinite alternate;
+}
+
+.waterspout .watermedium {
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  bottom: 30px;
+}
+
+.waterspout .watermedium.left {
+  left: 15px;
+  border-radius: 50% 100% 0% 100%;
+  transform: rotate(15deg);
+  animation: 중간물줄기왼쪽 3s 1s infinite alternate;
+}
+
+.waterspout .watermedium.right {
+  bottom: 33px;
+  right: 15px;
+  border-radius: 100% 50% 100% 0%;
+  transform: rotate(-15deg);
+  animation: 중간물줄기오른쪽 3s 1.5s infinite alternate;
+}
+
+.waterspout .waterbottom {
+  position: absolute;
+  width: 35px;
+  height: 18px;
+  bottom: 0px;
+}
+
+.waterspout .waterbottom.left {
+  left: 10px;
+  border-radius: 50% 100% 0% 100%;
+  transform: rotate(10deg);
+  animation: 아래물줄기왼쪽 3s 0s infinite alternate;
+}
+
+.waterspout .waterbottom.right {
+  bottom: 3px;
+  right: 10px;
+  border-radius: 100% 50% 100% 0%;
+  transform: rotate(-10deg);
+  animation: 아래물줄기오른쪽 3s 0.5s infinite alternate;
+}
+
+.waterspout .watterbottom {
+  width: 20px;
+  height: 30px;
+}
+
+.whale .face {
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+  width: 400px;
+  height: 300px;
+  border-radius: 90% 70% 70% 60%;
+  background-color: var(--pri);
+  z-index: 1;
+}
+
+.whale .face::before {
+  content: "";
+  position: absolute;
+  top: 110px;
+  right: 2px;
+  width: 75px;
+  height: 212px;
+  border-radius: 30% 0 130% 0;
+  transform: rotate(35deg);
+  background: var(--pri);
+  z-index: 3;
+}
+
+.face .eye {
+  position: absolute;
+  top: 110px;
+  width: 15px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.face .eye.left {
+  left: 65px;
+}
+
+.face .eye.right {
+  left: 165px;
+}
+
+.face .mouth {
+  position: absolute;
+  top: 150px;
+  width: 60px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: var(--pri);
+}
+
+.face .mouth.left {
+  width: 50px;
+  left: 60px;
+}
+
+.face .mouth.right {
+  left: 102px;
+}
+
+.face .mouth.right::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -90px;
+  width: 180px;
+  height: 40px;
+  background: var(--pri);
+  z-index: 3;
+}
+
+.face .mouthbottom {
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  border-radius: 20% 20% 55% 63%;
+  top: 150px;
+  left: 84px;
+  z-index: -1;
+  background: #c94f53;
+  animation: 입 3s infinite alternate;
+}
+
+.whale .body {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  border-radius: 800% 10% 800% 90%;
+  border: 5px solid var(--line);
+  bottom: 2px;
+  right: 40px;
+  background-color: var(--pri);
+}
+
+.body .fin {
+  position: absolute;
+  width: 60px;
+  height: 80px;
+  background-color: var(--pri);
+  border: 5px solid black;
+}
+
+.body .fin.left {
+  top: 75px;
+  left: -240px;
+  border-radius: 40% 0 40% 85%;
+  transform-origin: top;
+  animation: 지느러미왼쪽 0.5s infinite alternate;
+}
+
+.body .fin.right {
+  top: 80px;
+  left: 0px;
+  transform: rotate(-30deg);
+  border-radius: 50% 50% 40% 85%;
+  z-index: 2;
+  transform-origin: top;
+  animation: 지느러미오른쪽 0.5s infinite alternate;
+}
+
+.body .fin.right::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0px;
+  width: 60px;
+  height: 10px;
+  border-radius: 0 0 70% 80%;
+  background: var(--pri);
+  z-index: 3;
+}
+
+.body .tail {
+  position: absolute;
+  width: 50px;
+  height: 80px;
+  background-color: var(--pri);
+  top: -55px;
+  right: 0;
+  /* display: none; */
+}
+
+.body .tail.left {
+  transform: rotate(-20deg);
+  border-radius: 60% 40% 60% 0;
+  z-index: -1;
+  animation: 꼬리왼쪽 0.5s infinite alternate;
+}
+
+.body .tail.right {
+  top: -57px;
+  right: -10px;
+  transform-origin: bottom;
+  border-radius: 60% 40% 50% 40%;
+  z-index: 1;
+  animation: 꼬리오른쪽 0.5s infinite alternate;
+}
